@@ -32,7 +32,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.8, isStatic:false});
+	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.8, isStatic:true});
 	World.add(world, packageBody);
 	
 
@@ -58,7 +58,7 @@ function draw() {
 function keyPressed() {
  if (keyCode === DOWN_ARROW) {
     // Look at the hints in the document and understand how to make the package body fall only on
-    
+    Matter.Body.setStatic(packageBody,false)
   }
 }
 
